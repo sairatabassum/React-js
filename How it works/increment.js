@@ -9,4 +9,4 @@ const myElement = (
   </div>
 );
 
-ReactDom.render(myElement, domContainer);
+ReactDOM.render(myElement, domContainer);
