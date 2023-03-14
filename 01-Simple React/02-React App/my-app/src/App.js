@@ -3,6 +3,7 @@ import "./App.css";
 
 const number = 555;
 const singer = { name: "DR.Mahfuz", job: "singer" };
+const singer2 = { name: "Eva Rahman", job: "singer" };
 
 const singerStyle = {
   color: "purple",
@@ -22,6 +23,9 @@ function App() {
           <p>Name: {222 + number}</p>
           <p style={singerStyle}>
             Name: {singer.name} job: {singer.job}
+          </p>
+          <p style={{ color: "blue", backgroundColor: "white" }}>
+            Name: {singer2.name} Job: {singer2.job}
           </p>
         </div>
         <p>
