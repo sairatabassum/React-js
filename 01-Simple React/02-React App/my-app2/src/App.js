@@ -4,21 +4,22 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name="saira" nayika="moushumi"></Person>
+      <Person name="tabassum" nayika="cheka"></Person>
+      <Person name="Kuber" nayika="kopila"></Person>
       <h5>New component</h5>
-      <Person></Person>
+      <Friend></Friend>
       <Friend></Friend>
     </div>
   );
 }
 
-function Person() {
+function Person(props) {
+  console.log(props);
   return (
     <div className="person">
-      <h1>Sakib Al hasan</h1>
-      <p>Profession: Cricket</p>
+      <h1>{props.name}</h1>
+      <p>Nayika: {props.nayika}</p>
     </div>
   );
 }
