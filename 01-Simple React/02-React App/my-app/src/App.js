@@ -4,6 +4,11 @@ import "./App.css";
 const number = 555;
 const singer = { name: "DR.Mahfuz", job: "singer" };
 
+const singerStyle = {
+  color: "purple",
+  backgroundColor: "red",
+};
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +20,7 @@ function App() {
         </div>
         <div className="music">
           <p>Name: {222 + number}</p>
-          <p>
+          <p style={singerStyle}>
             Name: {singer.name} job: {singer.job}
           </p>
         </div>
