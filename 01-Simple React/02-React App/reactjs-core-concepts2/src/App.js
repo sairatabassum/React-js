@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 const materials = [
   { name: "laptop", price: 2324 },
@@ -10,12 +11,23 @@ const materials = [
 function App() {
   return (
     <div className="APP">
-      {/* <Product name="laptop" price="24555"></Product>
-      <Product name="watch" price="434762"></Product> */}
+      <Counter></Counter>
+    </div>
+  );
+}
 
-      {materials.map((material) => (
-        <Product name={material.name} price={material.price}></Product>
-      ))}
+function Counter() {
+  const [count, setCount] = useState(0);
+  console.log(count, setCount);
+
+  const increaseCount = () => setCount(count + 1);
+  const decreaseCount = () => setCount(count - 1);
+
+  return (
+    <div className="counter">
+      <h1>Count: {count} </h1>
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>Decrease</button>
     </div>
   );
 }
