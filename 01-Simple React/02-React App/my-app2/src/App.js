@@ -36,6 +36,7 @@ function App() {
   );
 }
 
+// // Props Display array of object, Array , Dynamic data to components
 function Person(props) {
   console.log(props);
   return (

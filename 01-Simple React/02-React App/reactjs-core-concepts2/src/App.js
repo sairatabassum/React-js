@@ -1,21 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
-
-const materials = [
-  { name: "laptop", price: 2324 },
-  { name: "watch", price: 43242 },
-  { name: "shoo", price: 325 },
-];
+import { useEffect, useState } from "react";
 
 function App() {
   return (
     <div className="APP">
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <ExternalUsers></ExternalUsers>
     </div>
   );
 }
 
+// Set state method
 function Counter() {
   const [count, setCount] = useState(0);
   console.log(count, setCount);
@@ -32,6 +28,23 @@ function Counter() {
   );
 }
 
+// API call useEffect
+function ExternalUsers() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>ExternalUsers</h1>
+    </div>
+  );
+}
+
+// Props Display array of object
 function Product(props) {
   return (
     <div className="product">
