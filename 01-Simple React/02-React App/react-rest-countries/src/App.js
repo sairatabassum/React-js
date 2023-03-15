@@ -1,9 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
+import Country from "./components/Country/Country";
 
 function App() {
-  return <div className="App">] </div>;
+  return (
+    <div className="App">
+      <Country></Country>
+    </div>
+  );
 }
 
 // function LoadCountries() {
