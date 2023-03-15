@@ -3,12 +3,14 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Country from "./components/Country/Country";
 import Person from "./components/Person/Person";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
       <Country></Country>
       <Person></Person>
+      <Header></Header>
     </div>
   );
 }
