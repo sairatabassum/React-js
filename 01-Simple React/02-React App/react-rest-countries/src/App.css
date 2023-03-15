@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.country {
+  background-color: antiquewhite;
+  border: solid 20px rebeccapurple;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
