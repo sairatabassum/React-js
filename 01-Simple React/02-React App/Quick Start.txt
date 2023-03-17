@@ -3,3 +3,4 @@ cd my-app
 npm start
 
 code .
+npm run build
