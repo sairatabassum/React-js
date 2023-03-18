@@ -47,10 +47,30 @@ function LoadPosts() {
   return (
     <div>
       <h1>Posts: {posts.length} </h1>
-      {posts.map((post) => (
-        <p>Post title: {post.title}</p>
-      ))}
+      {
+        // posts.map((post) => (
+        //   <p>Post title: {post.title}</p>
+        // ))
+        posts.map((post) => (
+          <Post title={post.title} body={post.body}></Post>
+        ))
+      }
       <p>Post title: {posts[0].title}</p>
+    </div>
+  );
+}
+
+function Post(props) {
+  return (
+    <div
+      style={{
+        backgroundColor: "lightsalmon",
+        margin: "20px",
+        border: "2px solid red",
+      }}
+    >
+      <h2>Title: {props.title}</h2>
+      <p> Body: {props.body}</p>
     </div>
   );
 }
