@@ -55,7 +55,6 @@ function LoadPosts() {
           <Post title={post.title} body={post.body}></Post>
         ))
       }
-      <p>Post title: {posts[0].title}</p>
     </div>
   );
 }
