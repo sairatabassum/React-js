@@ -1,5 +1,5 @@
 import React from "react";
-import { addToDb } from "../../Utilities/fakedb";
+import { addToDb, removeToDb } from "../../Utilities/fakedb";
 import "./Cosmetic.css";
 
 const Cosmetic = (props) => {
@@ -12,6 +12,11 @@ const Cosmetic = (props) => {
   const removeAllToCart = () => localStorage.clear();
 
   const addToCartWithParam = () => addToCart(id);
+  const removeFromCart = (id) => {
+    // console.log("Removing :", id);
+    removeToDb(id);
+  };
+
   return (
     <div className="product">
       <h3>Buy this: {name}</h3>
@@ -19,7 +24,7 @@ const Cosmetic = (props) => {
       <p>It has id: {id}</p>
       <button onClick={addToCartWithParam}>Add to Cart</button>
       <button onClick={removeAllToCart}>RemoveAll</button>
-      <button>Remove</button>
+      <button onClick={() => removeFromCart(id)}>Remove</button>
       <button onClick={() => addToCart(id)}>Purchase</button>
     </div>
   );
