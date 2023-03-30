@@ -7,8 +7,9 @@ const Cosmetic = (props) => {
   const addToCart = (id) => {
     console.log("Item added", id);
     addToDb(id);
-    // localStorage.clear();
   };
+
+  const removeAllToCart = () => localStorage.clear();
 
   const addToCartWithParam = () => addToCart(id);
   return (
@@ -17,6 +18,8 @@ const Cosmetic = (props) => {
       <p>Only for: ${price}</p>
       <p>It has id: {id}</p>
       <button onClick={addToCartWithParam}>Add to Cart</button>
+      <button onClick={removeAllToCart}>RemoveAll</button>
+      <button>Remove</button>
       <button onClick={() => addToCart(id)}>Purchase</button>
     </div>
   );
