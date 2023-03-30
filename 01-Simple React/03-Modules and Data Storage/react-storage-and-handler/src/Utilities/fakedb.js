@@ -30,4 +30,6 @@ const addToDb = (id) => {
   //   }
 };
 
-export { addToDb };
+const removeToDb = (id) => {};
+
+export { addToDb, removeToDb };
