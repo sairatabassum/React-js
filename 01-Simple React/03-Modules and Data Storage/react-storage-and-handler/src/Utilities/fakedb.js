@@ -41,4 +41,8 @@ const removeToDb = (id) => {
   }
 };
 
-export { addToDb, removeToDb };
+const deleteDB = () => {
+  localStorage.clear();
+};
+
+export { addToDb, removeToDb, deleteDB };
