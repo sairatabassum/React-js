@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { add } from "../../Utilities/calculate";
+import { add, getTotal } from "../../Utilities/calculate";
 import Cosmetic from "../Cosmetic/Cosmetic";
 // import add from "../../Utilities/calculate";
 
 const Cosmetics = () => {
   const first = 55;
   const second = 66;
-  const total = add(first, second);
+  const totalSum = add(first, second);
   const [cosmetics, setCosmetics] = useState([]);
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => setCosmetics(data));
   }, []);
+
+  const total = getTotal(cosmetics);
   // const cosmetics = [
   //   {
   //     id: "6424a9ee9bf07614eda1eba5",
@@ -49,6 +51,7 @@ const Cosmetics = () => {
     <div>
       <h1>Welcome to my cosmetics</h1>
       <p>Total: {total}</p>
+      <p>Total sum: {totalSum}</p>
       {cosmetics.map((cosmetic) => (
         <Cosmetic key={cosmetic.id} cosmetic={cosmetic}></Cosmetic>
       ))}
