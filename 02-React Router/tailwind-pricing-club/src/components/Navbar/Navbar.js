@@ -4,11 +4,31 @@ import { MinusIcon, XMarkIcon } from "@heroicons/react/24/solid";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const routes = [
-    { id: 1, name: "Home", link: "/home" },
-    { id: 2, name: "Shop", link: "/shop" },
-    { id: 3, name: "Deals", link: "/deals" },
-    { id: 4, name: "Coupons", link: "/coupons" },
-    { id: 5, name: "Contact", link: "/contact" },
+    {
+      id: 1,
+      name: "Home",
+      link: "/home",
+    },
+    {
+      id: 2,
+      name: "Shop",
+      link: "/shop",
+    },
+    {
+      id: 3,
+      name: "Deals",
+      link: "/deals",
+    },
+    {
+      id: 4,
+      name: "Coupons",
+      link: "/coupons",
+    },
+    {
+      id: 5,
+      name: "Contact",
+      link: "/contact",
+    },
   ];
   return (
     <nav className="bg-indigo-200">
