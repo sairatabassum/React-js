@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { json, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const FriendDetail = () => {
   const { friendID } = useParams();
@@ -21,7 +21,7 @@ const FriendDetail = () => {
       <h6>Website: {friend.website}</h6>
       <p>City: {friend.address?.city}</p>
       <p>
-        <small>Lat: {friend.address.geo?.lat}</small>
+        <small>Lat: {friend.address?.geo?.lat}</small>
       </p>
       <p>
         <small>Lng: {friend.address?.geo?.lng}</small>
