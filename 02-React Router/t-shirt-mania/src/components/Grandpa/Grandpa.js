@@ -4,6 +4,19 @@ import Father from "../Father/Father";
 import Aunty from "../Aunty/Aunty";
 import "./Granpa.css";
 
+/**
+ * Context api
+ *  1. call createContext with a default value
+ *  2. set a variable of the context with uppercase
+ *  3. Make sure you export the context to use it in other plaxes
+ *  4. Wrap your child content using RingContext.Provider
+ *  5. Provide a value
+ *  6. to consume the context from child component
+ *  7. useContext hook and you will need to pass the contextName
+ *  8. Make sure you take single note
+ *
+ * */
+
 export const RingContext = createContext("diamond");
 
 const Grandpa = () => {
@@ -14,7 +27,7 @@ const Grandpa = () => {
   const ornament = "Diamond Ring";
 
   return (
-    <RingContext.Provider value={ornament}>
+    <RingContext.Provider value={[house, setHouse]}>
       <div className="grandpa">
         <h3>Grandpa</h3>
         <p>House: {house}</p>
