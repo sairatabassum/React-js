@@ -33,6 +33,7 @@ function App() {
     signInWithPopup(auth, githubProvider)
       .then((result) => {
         const user = result.user;
+        setUser(user);
         console.log(user);
       })
       .catch((error) => {
