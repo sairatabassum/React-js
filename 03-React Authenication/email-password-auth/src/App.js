@@ -22,6 +22,8 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [text, setText] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleNameBlur = (event) => {
     setName(event.target.value);
@@ -37,6 +39,7 @@ function App() {
 
   const handleRegisteredChange = (event) => {
     setRegistered(event.target.checked);
+    setText("");
   };
 
   const handleFormSubmit = (event) => {
@@ -49,6 +52,8 @@ function App() {
 
     if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
       setError("Password Should contain at least one special character");
+      setSuccess("");
+      setText("");
       return;
     }
     setValidated(true);
@@ -73,10 +78,12 @@ function App() {
           setPassword("");
           verifyEmail();
           setUserName();
+          setSuccess("Account created SuccessFully");
         })
         .catch((error) => {
           console.error(error);
           setError(error.message);
+          setSuccess("");
         });
     }
     event.preventDefault();
@@ -84,7 +91,7 @@ function App() {
 
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email).then(() => {
-      console.log("email sent");
+      setText("email sent for updating new password");
     });
   };
 
@@ -93,7 +100,7 @@ function App() {
       displayName: name,
     })
       .then(() => {
-        console.log("updating name");
+        setText("updating name");
       })
       .catch((error) => {
         setError(error.message);
@@ -101,7 +108,7 @@ function App() {
   };
   const verifyEmail = () => {
     sendEmailVerification(auth.currentUser).then(() => {
-      console.log("Email Verification Sent");
+      setText("Email Verification Sent");
     });
   };
 
@@ -154,6 +161,7 @@ function App() {
               Please provide a valid password.
             </Form.Control.Feedback>
           </Form.Group>
+          <p className="text-info">{text}</p>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check
               onChange={handleRegisteredChange}
@@ -161,7 +169,7 @@ function App() {
               label="Already Registered?"
             />
           </Form.Group>
-
+          <p>{success}</p>
           <p className="text-danger">{error}</p>
           <Button onClick={handlePasswordReset} variant="link">
             Forget Password?
